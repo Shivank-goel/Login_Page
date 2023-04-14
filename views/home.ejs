@@ -1,16 +1,296 @@
-<%- include('partials/header') %>
+<%- include('partials/header_home') %>
 
 
-<div class="jumbotron centered">
-  <div class="container">
-    <i class="fas fa-key fa-6x"></i>
-    <h1 class="display-3">Login Here</h1>
-    <p class="lead">Authentication is must</p>
-    <hr>
-    <a class="btn btn-light btn-lg" href="/register" role="button">Sign Up</a>
-    <a class="btn btn-dark btn-lg" href="/login" role="button">Login</a>
+  <!--Main Navigation-->
+  <header>
+    <style>
+      /* Carousel styling */
+      #introCarousel,
+      .carousel-inner,
+      .carousel-item,
+      .carousel-item.active {
+        height: 100vh;
+      }
+      .carousel-item:nth-child(1) {
+        background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #introCarousel {
+          margin-top: -58.59px;
+        }
+        #introCarousel,
+        .carousel-inner,
+        .carousel-item,
+        .carousel-item.active {
+          height: 50vh;
+        }
+      }
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+      .container {
+        position: relative;
+        text-align: center;
+        color: white;
+      }
+      /* Bottom left text */
+      .bottom-left {
+        position: absolute;
+        bottom: 8px;
+        left: 16px;
+      }
+      /* Top left text */
+      .top-left {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+      }
+      /* Top right text */
+      .top-right {
+        position: absolute;
+        top: 8px;
+        right: 16px;
+      }
+      /* Bottom right text */
+      .bottom-right {
+        position: absolute;
+        bottom: 8px;
+        right: 16px;
+      }
+      /* Centered text */
+      .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .threeD {
+        color: white;
+        white-space: nowrap;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3em;
+        font-family: sans-serif;
+        letter-spacing: 0.1em;
+        transition: 0.3s;
+        text-shadow: 1px 1px 0 grey, 1px 2px 0 grey, 1px 3px 0 grey, 1px 4px 0 grey,
+          1px 5px 0 grey, 1px 6px 0 grey, 1px 7px 0 grey, 1px 8px 0 grey,
+          5px 13px 15px black;
+      }
+      .threeD:hover {
+        transition: 0.3s;
+        transform: scale(1.1)translate(-50%, -50%);
+        text-shadow: 1px -1px 0 grey, 1px -2px 0 grey, 1px -3px 0 grey,
+          1px -4px 0 grey, 1px -5px 0 grey, 1px -6px 0 grey, 1px -7px 0 grey,
+          1px -8px 0 grey, 5px -13px 15px black, 5px -13px 25px #808080;
+      }
+    </style>
 
-  </div>
-</div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand nav-link" target="_blank" href="https://mdbootstrap.com/docs/standard/">
+          <strong>TravelNest</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" style=" margin-left:1500px" href="#intro">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login" role="button">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/register" role="button">Sign Up</a>
+            </li>
+          </ul>
 
-<%- include('partials/footer') %>
+
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Carousel wrapper -->
+    <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
+      <!-- Indicators -->
+
+
+      <!-- Inner -->
+      <div class="carousel-inner">
+        <!-- Single item -->
+        <div class="carousel-item active">
+          <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white text-center">
+                <div class="threeD">
+                  <div class="centered">Choose Your Stay <br> With Us</div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single item -->
+
+
+        <!-- Single item -->
+
+      </div>
+    </div>
+    <!-- Carousel wrapper -->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="mt-5">
+    <div class="container">
+      <!--Section: Content-->
+      <section>
+        <div class="row">
+          <div class="col-md-6 gx-5 mb-4">
+            <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+              <img
+                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGhvdGVsc3xlbnwwfHwwfHw%3D&w=1000&q=80 "
+                class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-6 gx-5 mb-4 text-dark">
+            <h4><strong>About Us</strong></h4>
+            <p class="text-muted">
+              Find your perfect stay with ease - our hotel recommendation website compiles honest reviews and ratings
+              from multiple sources, helping you make informed decisions and discover exceptional accommodations for
+              your next adventure.
+            </p>
+            <p><strong></strong></p>
+            <p class="text-muted">
+              Our website is designed to take the guesswork out of booking a hotel, saving you time and money while
+              ensuring a memorable and comfortable stay. With thousands of hotels to choose from and expert insights at
+              your fingertips, you can travel with confidence knowing that you'll find the best accommodations for your
+              needs and preferences.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!--Section: Content-->
+
+      <hr class="my-5" />
+
+      <!--Section: Content-->
+      <section class="text-center">
+        <h4 class="mb-5 text-dark"><strong>Most Popular Places</strong></h4>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-12 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img
+                  src="https://media.istockphoto.com/id/621897226/photo/goa-beach-and-beautiful-sky-india.jpg?s=170667a&w=0&k=20&c=C4PQx8Ay7mVCeFPySwoKC-dUgm4SU_dizNy0ZvHNHSo="
+                  class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body text-dark">
+                <h5 class="card-title text-dark">Goa</h5>
+                <p class="card-text text-dark">
+                  Discover the stunning beaches, vibrant culture, rich history, and thrilling nightlife of Goa, a
+                  perfect blend of Portuguese influence and Indian diversity, making it an irresistible tourist
+                  destination with delicious cuisine and scenic views.
+                </p>
+                <a href="#!" class="btn btn-primary">Check hotels</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img
+                  src="https://c4.wallpaperflare.com/wallpaper/754/557/317/palace-of-the-winds-jaipur-rajasthan-india-wallpaper-preview.jpg"
+                  class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body text-dark">
+                <h5 class="card-title text-dark">Jaipur</h5>
+                <p class="card-text text-dark">
+                  Experience the royal charm of Jaipur, the Pink City of India, with its majestic palaces, ancient
+                  forts, colorful bazaars, and delicious Rajasthani cuisine, offering a unique blend of history,
+                  culture, and hospitality that will leave you spellbound.
+                </p>
+                <a href="#!" class="btn btn-primary">Check hotels</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img
+                  src="https://c4.wallpaperflare.com/wallpaper/858/348/52/kettuvallam-houseboat-kerala-india-wallpaper-preview.jpg"
+                  class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body text-dark">
+                <h5 class="card-title text-dark">Kerela</h5>
+                <p class="card-text text-dark">
+                  Experience the royal charm of Jaipur, the Pink City of India, with its majestic palaces, ancient
+                  forts, colorful bazaars, and delicious Rajasthani cuisine, offering a unique blend of history,
+                  culture, and hospitality that will leave you spellbound.
+                </p>
+                <a href="#!" class="btn btn-primary">Check hotels</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Section: Content-->
+
+
+
+      <!--Section: Content-->
+
+      <!--Section: Content-->
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="bg-light text-lg-start">
+
+
+
+
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-dark" href="https://mdbootstrap.com/">TravelNest.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--Footer-->
+
+
+  <%- include('partials/footer') %>
