@@ -12,7 +12,7 @@ const JwtStrategy = require("passport-jwt").Strategy;
       ExtractJwt = require("passport-jwt").ExtractJwt;
 
 
- const app = express()
+const app = express()
 
 
  app.use(express.static("public"));
