@@ -12,8 +12,7 @@ const JwtStrategy = require("passport-jwt").Strategy;
       ExtractJwt = require("passport-jwt").ExtractJwt;
 
 
-const app = express()
-
+ const app = express()
 
  app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -68,7 +67,7 @@ passport.use(new GoogleStrategy({
     scope:["profile"]
   },
   function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ googleId: profile.id, useremail: profile.emails[0].value, name: profile.name.givenName, image: profile.photos[0].value}, function (err, user) {
+    User.findOrCreate({ googleId: profile.id, useremail: profile.emails[0].value, username: profile.name.givenName, image: profile.photos[0].value}, function (err, user) {
       return cb(err, user);
 
     });
@@ -103,10 +102,15 @@ app.get("/register", function(req, res){
 
 app.get("/secrets",function(req,res){
   if(req.isAuthenticated()){
-    res.render("secrets");
+    User.find({}
+    ).then(function(found){
+      res.render("secrets", {"elements" : found} );
+    })
+
   }else{
     res.render("login");
   }
+
 })
 
 app.get("/logout",function(req, res){
