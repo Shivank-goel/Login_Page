@@ -1,4 +1,3 @@
-//jshint esversion:6
 require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -35,7 +34,6 @@ const userSchema = new mongoose.Schema( {
   password:String,
   googleId:String,
   useremail:String,
-  name:String,
   image:String
 })
 
@@ -100,18 +98,34 @@ app.get("/register", function(req, res){
   res.render("register");
 })
 
-app.get("/secrets",function(req,res){
-  if(req.isAuthenticated()){
-    User.find({}
-    ).then(function(found){
-      res.render("secrets", {"elements" : found} );
-    })
 
-  }else{
-    res.render("login");
+app.get("/secrets", function(req, res) {
+  console.log("req.isAuthenticated():", req.isAuthenticated());
+  console.log("req.user:", req.user);
+
+  if (req.isAuthenticated()) {
+    User.findOne({ username: req.user.username }).then(function(user) {
+      console.log("User found in database:", user);
+
+      if (user) {
+        res.render("secrets", { username: user.username });
+      } else {
+        console.log("User not found in database");
+        res.redirect("/");
+      }
+    });
+  } else {
+    res.redirect("/login");
   }
+});
 
-})
+
+
+
+
+
+
+
 
 app.get("/logout",function(req, res){
   req.logout(function(err){
@@ -149,6 +163,7 @@ app.post("/login", function(req, res){
     if(err){
       console.log(err);
     }else{
+
       passport.authenticate("local")(req, res, function(){
         res.redirect("/secrets");
       })
